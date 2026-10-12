@@ -1,0 +1,35 @@
+{
+  "mcpServers": {
+    "risk-management": {
+      "command": "python",
+      "args": ["/Users/aslan/Downloads/agents/tools/risk-management/server.py"],
+      "description": "Sermaye koruma ve pozisyon yönetimi araç havuzu"
+    },
+    "technical-analysis": {
+      "command": "python",
+      "args": ["/Users/aslan/Downloads/agents/tools/technical-analysis/server.py"],
+      "description": "ATR ve volatilite verisi için teknik göstergeler"
+    }
+  },
+  "primaryServer": "risk-management",
+  "secondaryServer": "technical-analysis",
+  "activeTools": [
+    "check_daily_loss_limit",
+    "check_portfolio_heat",
+    "stop_atr",
+    "stop_chandelier",
+    "stop_percentage",
+    "stop_support_level",
+    "update_trailing_stop",
+    "evaluate_risk_reward",
+    "size_fixed_fractional",
+    "size_volatility_adjusted",
+    "check_max_allocation",
+    "check_new_position_limits",
+    "calculate_var",
+    "calculate_max_drawdown",
+    "calculate_rsi",
+    "calculate_adx"
+  ],
+  "strategy": "capital-preservation"
+}

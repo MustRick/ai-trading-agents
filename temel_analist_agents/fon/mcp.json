@@ -1,0 +1,16 @@
+{
+  "server": "https://evo.fintables.com/mcp",
+  "transport": "http",
+  "clientName": "fon-agent",
+  "primarySkill": "yatirim_fonlari",
+  "auth": {
+    "flow": "oauth_device",
+    "initTool": "authenticate",
+    "completeTool": "complete_authentication"
+  },
+  "tools": {
+    "sembol_arama": "Fon kodu doğrulama",
+    "veri_sorgula": "TEFAS ve fon verisi SQL sorgusu",
+    "finansal_beceri_yukle": "yatirim_fonlari şemasını yükle"
+  }
+}

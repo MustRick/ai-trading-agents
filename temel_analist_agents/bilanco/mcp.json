@@ -1,0 +1,24 @@
+{
+  "server": "https://evo.fintables.com/mcp",
+  "transport": "http",
+  "clientName": "fintables-agent",
+  "auth": {
+    "flow": "oauth_device",
+    "initTool": "authenticate",
+    "completeTool": "complete_authentication",
+    "note": "İlk çalıştırmada /heartbeat komutu ile oturum aç"
+  },
+  "tools": {
+    "authenticate": "OAuth cihaz akışını başlatır, kullanıcıya doğrulama URL'si döner",
+    "complete_authentication": "Doğrulama kodunu doğrular, oturumu tamamlar"
+  },
+  "claude_code": {
+    "mcpServers": {
+      "fintables": {
+        "type": "http",
+        "url": "https://evo.fintables.com/mcp"
+      }
+    },
+    "model": "claude-sonnet-4-6"
+  }
+}

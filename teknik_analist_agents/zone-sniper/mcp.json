@@ -1,0 +1,29 @@
+{
+  "mcpServers": {
+    "technical-analysis": {
+      "command": "python",
+      "args": ["/Users/aslan/Downloads/agents/tools/technical-analysis/server.py"],
+      "description": "Teknik analiz gösterge havuzu"
+    }
+  },
+  "activeTools": [
+    "calculate_sr_zones",
+    "check_sr_level_break",
+    "calculate_rsi",
+    "calculate_stochastic",
+    "calculate_bollinger_bands"
+  ],
+  "strategy": "sr-rsi-confluence",
+  "primarySignals": {
+    "long": "support_zone + rsi_oversold",
+    "short": "resistance_zone + rsi_overbought"
+  },
+  "parameters": {
+    "rsi_period": 14,
+    "rsi_oversold": 30,
+    "rsi_overbought": 70,
+    "zone_proximity_pct": 1.5,
+    "min_zone_strength": 2,
+    "stop_buffer_pct": 0.5
+  }
+}

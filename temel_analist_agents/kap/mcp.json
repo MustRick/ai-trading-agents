@@ -1,0 +1,18 @@
+{
+  "server": "https://evo.fintables.com/mcp",
+  "transport": "http",
+  "clientName": "kap-agent",
+  "primarySkills": ["kap_haberleri"],
+  "auth": {
+    "flow": "oauth_device",
+    "initTool": "authenticate",
+    "completeTool": "complete_authentication"
+  },
+  "tools": {
+    "sembol_arama": "Hisse kodu doğrulama",
+    "veri_sorgula": "KAP bildirim SQL sorgusu",
+    "dokumanlarda_ara": "KAP doküman full-text arama",
+    "dokuman_chunk_yukle": "Doküman bölümü içeriği çekme",
+    "finansal_beceri_yukle": "kap_haberleri şemasını yükle"
+  }
+}

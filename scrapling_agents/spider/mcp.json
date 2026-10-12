@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "scrapling": {
+      "command": "python",
+      "args": ["/Users/aslan/Downloads/agents/tools/scrapling/server.py"],
+      "description": "Scrapling web scraping araç havuzu"
+    }
+  },
+  "activeTools": [
+    "fetcher_get",
+    "fetcher_post",
+    "stealthy_fetch",
+    "dynamic_fetch",
+    "spider_crawl",
+    "parse_html"
+  ],
+  "agent": "spider"
+}

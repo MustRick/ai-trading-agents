@@ -1,0 +1,16 @@
+{
+  "server": "https://evo.fintables.com/mcp",
+  "transport": "http",
+  "clientName": "fiyat-agent",
+  "primarySkill": "ohlcv",
+  "auth": {
+    "flow": "oauth_device",
+    "initTool": "authenticate",
+    "completeTool": "complete_authentication"
+  },
+  "tools": {
+    "sembol_arama": "Hisse kodu doğrulama — her analizde ilk adım",
+    "veri_sorgula": "OHLCV ve fiyat verisi SQL sorgusu",
+    "finansal_beceri_yukle": "ohlcv şemasını yükle"
+  }
+}

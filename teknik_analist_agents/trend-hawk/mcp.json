@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "technical-analysis": {
+      "command": "python",
+      "args": ["/Users/aslan/Downloads/agents/tools/technical-analysis/server.py"],
+      "description": "Teknik analiz gösterge havuzu"
+    }
+  },
+  "activeTools": [
+    "calculate_ema_crossover",
+    "calculate_adx",
+    "calculate_parabolic_sar",
+    "calculate_sma",
+    "calculate_obv"
+  ],
+  "strategy": "trend-following"
+}
