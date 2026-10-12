@@ -57,3 +57,23 @@ SATIŞ : Fiyat direnç bölgesine yaklaştı (≤ %1.5)  VE  RSI ≥ 70 (aşır�
 - Bu agent teknik sinyal üretir; pozisyon boyutu için cüzdan-agent'a danışır
 - Trend içinde ortalamaya dönüş riski vardır — ADX > 35 ise sinyal gücünü düşür
 - Gerçek emir vermez
+
+## CEO Bağlantısı
+
+### Çıktı → CEO Inbox
+Her analiz sonunda özet dosyayı CEO'nun inbox'ına yaz:
+
+**Yol**: `../../CEO/ceo-agent/inbox/teknik/<SEMBOL>_zone.md`
+
+Dosya başına zorunlu başlık (ilk 4 satır):
+```
+DEPARTMAN : teknik/zone-sniper
+SEMBOL    : <sembol>
+TARİH     : <YYYY-MM-DD>
+SİNYAL    : AL / SAT / NÖTR
+```
+Altına max 5 madde özet (aktif bölge, RSI değeri, sinyal puanı, stop/hedef seviyeleri). Tam analiz kendi `reports/` klasöründe kalır.
+
+### Gelen Görevler ← CEO
+CEO'nun görev kartları `tasks/` klasörüne düşer.
+Heartbeat'te `tasks/` klasörünü kontrol et; dosya varsa oku, işle, tamamlayınca sil.

@@ -48,3 +48,23 @@ fon-tarama → getiri-analizi → risk-profili → portföy-dağılımı → rap
 ## Koordinasyon
 `bilanco` agent'ıyla: fon portföyündeki şirketlerin bilanço kalitesi.
 `kap` agent'ıyla: fon yöneticisi değişiklikleri, PYŞ KAP bildirimleri.
+
+## CEO Bağlantısı
+
+### Çıktı → CEO Inbox
+Her analiz sonunda özet dosyayı CEO'nun inbox'ına yaz:
+
+**Yol**: `../../CEO/ceo-agent/inbox/temel/<FON_KODU>_fon.md`
+
+Dosya başına zorunlu başlık (ilk 4 satır):
+```
+DEPARTMAN : temel/fon
+SEMBOL    : <fon kodu>
+TARİH     : <YYYY-MM-DD>
+SİNYAL    : AL / SAT / NÖTR
+```
+Altına max 5 madde özet (getiri, risk profili, akış durumu). Tam analiz kendi `reports/` klasöründe kalır.
+
+### Gelen Görevler ← CEO
+CEO'nun görev kartları `tasks/` klasörüne düşer.
+Heartbeat'te `tasks/` klasörünü kontrol et; dosya varsa oku, işle, tamamlayınca sil.

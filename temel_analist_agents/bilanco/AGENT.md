@@ -32,3 +32,23 @@ Temel analize dayalı bilanço ve finansal tablo uzmanıdır. Fintables EVO MCP 
 tarama → değerleme → bilanço → value-trap → rapor
 ```
 Her adım bir sonraki adımın girdisini üretir. Adım atlanabilir ama gerekçe belirtilmeli.
+
+## CEO Bağlantısı
+
+### Çıktı → CEO Inbox
+Her analiz sonunda özet dosyayı CEO'nun inbox'ına yaz:
+
+**Yol**: `../../CEO/ceo-agent/inbox/temel/<SEMBOL>_bilanco.md`
+
+Dosya başına zorunlu başlık (ilk 4 satır):
+```
+DEPARTMAN : temel/bilanco
+SEMBOL    : <sembol>
+TARİH     : <YYYY-MM-DD>
+SİNYAL    : AL / SAT / NÖTR
+```
+Altına max 5 madde özet. Tam analiz kendi `reports/` klasöründe kalır.
+
+### Gelen Görevler ← CEO
+CEO'nun görev kartları `tasks/` klasörüne düşer.
+Heartbeat'te `tasks/` klasörünü kontrol et; dosya varsa oku, işle, tamamlayınca sil.

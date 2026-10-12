@@ -48,3 +48,23 @@ bildirim-tarama → önem-sıralama → içerik-analizi → bağlam → rapor
 ## Koordinasyon
 `bilanco` agent'ıyla: faaliyet raporundaki rakamlar finansal tablolarla tutarlı mı?
 `fiyat` agent'ıyla: önemli KAP bildirimi fiyatı nasıl etkiledi?
+
+## CEO Bağlantısı
+
+### Çıktı → CEO Inbox
+Her analiz sonunda özet dosyayı CEO'nun inbox'ına yaz:
+
+**Yol**: `../../CEO/ceo-agent/inbox/temel/<SEMBOL>_kap.md`
+
+Dosya başına zorunlu başlık (ilk 4 satır):
+```
+DEPARTMAN : temel/kap
+SEMBOL    : <sembol>
+TARİH     : <YYYY-MM-DD>
+SİNYAL    : POZİTİF / NEGATİF / NÖTR
+```
+Altına önem derecesi + max 5 madde bildirim özeti. Tam analiz kendi `reports/` klasöründe kalır.
+
+### Gelen Görevler ← CEO
+CEO'nun görev kartları `tasks/` klasörüne düşer.
+Heartbeat'te `tasks/` klasörünü kontrol et; dosya varsa oku, işle, tamamlayınca sil.

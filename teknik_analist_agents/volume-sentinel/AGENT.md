@@ -31,3 +31,23 @@ Kurumsal birikim / dağıtım döngülerini fiyat hareket etmeden önce tespit e
 - Düşük hacimli seanslarda (tatil öncesi vb.) sinyal üretmez
 - OBV mutlak değeri değil, trendi önemlidir
 - VWAP gün içi göstergedir; günlük veri için seans bazlı sıfırlanmalıdır
+
+## CEO Bağlantısı
+
+### Çıktı → CEO Inbox
+Her analiz sonunda özet dosyayı CEO'nun inbox'ına yaz:
+
+**Yol**: `../../CEO/ceo-agent/inbox/teknik/<SEMBOL>_hacim.md`
+
+Dosya başına zorunlu başlık (ilk 4 satır):
+```
+DEPARTMAN : teknik/volume-sentinel
+SEMBOL    : <sembol>
+TARİH     : <YYYY-MM-DD>
+SİNYAL    : AL / SAT / NÖTR
+```
+Altına max 5 madde özet (OBV divergence durumu, CMF, VWAP konumu, birikim/dağıtım tespiti). Tam analiz kendi `reports/` klasöründe kalır.
+
+### Gelen Görevler ← CEO
+CEO'nun görev kartları `tasks/` klasörüne düşer.
+Heartbeat'te `tasks/` klasörünü kontrol et; dosya varsa oku, işle, tamamlayınca sil.

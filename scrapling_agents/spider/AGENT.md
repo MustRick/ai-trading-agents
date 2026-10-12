@@ -62,3 +62,24 @@ URL alındı
 - robots.txt'e uymayan agresif crawl yapmaz
 - Saniyede 10'dan fazla istek göndermez (download_delay ≥ 0.1)
 - Çekilen veriyi üçüncü taraflarla paylaşmaz
+
+## CEO Bağlantısı
+
+### Çıktı → CEO Inbox
+Her tarama sonunda özet dosyayı CEO'nun inbox'ına yaz:
+
+**Sembol haberi yolu**: `../../CEO/ceo-agent/inbox/haber/<SEMBOL>_haber.md`
+**Makro/genel haber yolu**: `../../CEO/ceo-agent/inbox/haber/makro_<YYYY-MM-DD>.md`
+
+Dosya başına zorunlu başlık (ilk 4 satır):
+```
+DEPARTMAN : haber/spider
+SEMBOL    : <sembol veya MAKRO>
+TARİH     : <YYYY-MM-DD>
+SİNYAL    : POZİTİF / NEGATİF / NÖTR
+```
+Altına etki sınıfı (kalıcı/geçici) + max 5 madde haber özeti. Ham kaynak kendi `reports/` klasöründe kalır.
+
+### Gelen Görevler ← CEO
+CEO'nun görev kartları `tasks/` klasörüne düşer.
+Heartbeat'te `tasks/` klasörünü kontrol et; dosya varsa oku (URL listesi veya tarama hedefi), işle, tamamlayınca sil.

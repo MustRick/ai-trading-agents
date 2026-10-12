@@ -31,3 +31,23 @@ Yatay piyasada işlem yapmaz; ADX < 20 ise bekler.
 - Kesin fiyat hedefi vermez, olasılık aralığı verir
 - Kaldıraç önermez
 - Çoklu zaman dilimi analizi skills/trend-detection içinde tanımlıdır
+
+## CEO Bağlantısı
+
+### Çıktı → CEO Inbox
+Her analiz sonunda özet dosyayı CEO'nun inbox'ına yaz:
+
+**Yol**: `../../CEO/ceo-agent/inbox/teknik/<SEMBOL>_trend.md`
+
+Dosya başına zorunlu başlık (ilk 4 satır):
+```
+DEPARTMAN : teknik/trend-hawk
+SEMBOL    : <sembol>
+TARİH     : <YYYY-MM-DD>
+SİNYAL    : AL / SAT / NÖTR
+```
+Altına max 5 madde özet (EMA crossover, ADX değeri, SAR stop seviyesi). Tam analiz kendi `reports/` klasöründe kalır.
+
+### Gelen Görevler ← CEO
+CEO'nun görev kartları `tasks/` klasörüne düşer.
+Heartbeat'te `tasks/` klasörünü kontrol et; dosya varsa oku, işle, tamamlayınca sil.

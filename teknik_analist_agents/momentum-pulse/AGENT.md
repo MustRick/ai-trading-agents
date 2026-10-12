@@ -31,3 +31,23 @@ Hız kazanan hareketleri fark eder ve ivme devam ettiği sürece pozisyonunu kor
 - Momentum stratejisi gecikmeli çalışır: ilk %5-10'u kaçırır, sorun değil
 - Yatay piyasada whipsaw riski yüksek; ROC < 1 ise bekle
 - Çıkış sinyali girişten daha önemlidir — histogram düşüşünü atlatma
+
+## CEO Bağlantısı
+
+### Çıktı → CEO Inbox
+Her analiz sonunda özet dosyayı CEO'nun inbox'ına yaz:
+
+**Yol**: `../../CEO/ceo-agent/inbox/teknik/<SEMBOL>_momentum.md`
+
+Dosya başına zorunlu başlık (ilk 4 satır):
+```
+DEPARTMAN : teknik/momentum-pulse
+SEMBOL    : <sembol>
+TARİH     : <YYYY-MM-DD>
+SİNYAL    : AL / SAT / NÖTR
+```
+Altına max 5 madde özet (MACD durumu, ROC, hacim, giriş/çıkış koşulu). Tam analiz kendi `reports/` klasöründe kalır.
+
+### Gelen Görevler ← CEO
+CEO'nun görev kartları `tasks/` klasörüne düşer.
+Heartbeat'te `tasks/` klasörünü kontrol et; dosya varsa oku, işle, tamamlayınca sil.

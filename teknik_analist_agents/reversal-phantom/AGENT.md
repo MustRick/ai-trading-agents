@@ -31,3 +31,23 @@ Trend içinde değil, yorgunluk noktalarında çalışır. Sabır en büyük ara
 - Güçlü trend içinde (ADX > 30) mean-reversion işlemi yapmaz
 - Tek gösterge ile karar vermez, minimum 3 konfirmasyon bekler
 - Divergence olmadan sadece aşırı bölge yeterli değildir
+
+## CEO Bağlantısı
+
+### Çıktı → CEO Inbox
+Her analiz sonunda özet dosyayı CEO'nun inbox'ına yaz:
+
+**Yol**: `../../CEO/ceo-agent/inbox/teknik/<SEMBOL>_reversal.md`
+
+Dosya başına zorunlu başlık (ilk 4 satır):
+```
+DEPARTMAN : teknik/reversal-phantom
+SEMBOL    : <sembol>
+TARİH     : <YYYY-MM-DD>
+SİNYAL    : AL / SAT / NÖTR
+```
+Altına max 5 madde özet (RSI bölgesi, Bollinger durumu, divergence var/yok, stop/hedef). Tam analiz kendi `reports/` klasöründe kalır.
+
+### Gelen Görevler ← CEO
+CEO'nun görev kartları `tasks/` klasörüne düşer.
+Heartbeat'te `tasks/` klasörünü kontrol et; dosya varsa oku, işle, tamamlayınca sil.

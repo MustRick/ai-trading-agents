@@ -47,3 +47,23 @@ teknik-gorunum → trend → momentum → volatilite → göreli güç → rapor
 ## Koordinasyon
 `bilanco` agent'ıyla çapraz kontrol için: bilanço sağlıklı + teknik pozitif = güçlü sinyal.
 `kap` agent'ıyla: son KAP bildirimi fiyatı etkiledi mi?
+
+## CEO Bağlantısı
+
+### Çıktı → CEO Inbox
+Her analiz sonunda özet dosyayı CEO'nun inbox'ına yaz:
+
+**Yol**: `../../CEO/ceo-agent/inbox/temel/<SEMBOL>_fiyat.md`
+
+Dosya başına zorunlu başlık (ilk 4 satır):
+```
+DEPARTMAN : temel/fiyat
+SEMBOL    : <sembol>
+TARİH     : <YYYY-MM-DD>
+SİNYAL    : AL / SAT / NÖTR
+```
+Altına max 5 madde özet (giriş bölgesi, stop, hedef, trend durumu). Tam analiz kendi `reports/` klasöründe kalır.
+
+### Gelen Görevler ← CEO
+CEO'nun görev kartları `tasks/` klasörüne düşer.
+Heartbeat'te `tasks/` klasörünü kontrol et; dosya varsa oku, işle, tamamlayınca sil.

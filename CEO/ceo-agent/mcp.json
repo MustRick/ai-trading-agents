@@ -1,0 +1,43 @@
+{
+  "description": "CEO Agent tool katmanı — SALT OKUNUR state erişimi. Fintables yoktur; piyasa verisi departman özetleri üzerinden gelir.",
+  "tools": [
+    {
+      "name": "read_file",
+      "description": "inbox/ ve memory.md gibi yerel dosyaları okur",
+      "permissions": ["read"],
+      "paths": [
+        "inbox/**",
+        "memory.md",
+        "heartbeat.md",
+        "reports/**",
+        "skills/**"
+      ]
+    },
+    {
+      "name": "write_file",
+      "description": "Yalnızca reports/ ve memory.md'ye yazar",
+      "permissions": ["write"],
+      "paths": [
+        "reports/daily/*",
+        "reports/weekly/*",
+        "reports/alerts/*",
+        "memory.md"
+      ]
+    },
+    {
+      "name": "run_script",
+      "description": "skills/ altındaki Python scriptlerini çalıştırır",
+      "permissions": ["execute"],
+      "paths": [
+        "skills/sinyal-sentezi/scripts/kompozit_skor.py",
+        "skills/baz-oran-kontrolu/scripts/gecmis_isabet.py"
+      ]
+    }
+  ],
+  "restrictions": {
+    "no_direct_market_data": true,
+    "no_fintables_access": true,
+    "no_order_execution": true,
+    "read_only_external": true
+  }
+}

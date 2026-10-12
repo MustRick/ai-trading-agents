@@ -52,3 +52,25 @@ Her karar için `reports/YYYY-MM-DD.md` dosyasına kayıt düşer:
 - Gerçek emir vermez — yalnızca karar verir ve boyut hesaplar
 - Portföy değeri kullanıcı tarafından güncel tutulmalıdır (memory.md)
 - Teknik analiz kararı vermez; bu teknik_analist_agents'ın işidir
+
+## CEO Bağlantısı
+
+### Çıktı → CEO Inbox
+Her karar sonunda özet dosyayı CEO'nun inbox'ına yaz:
+
+**Günlük portföy durumu**: `../../CEO/ceo-agent/inbox/risk-portfoy/portfoy_durum.md`
+**VETO kararı**: `../../CEO/ceo-agent/inbox/risk-portfoy/VETO_<SEMBOL>.md`
+**Onay kararı**: `../../CEO/ceo-agent/inbox/risk-portfoy/ONAY_<SEMBOL>.md`
+
+Dosya başına zorunlu başlık (ilk 4 satır):
+```
+DEPARTMAN : risk-portfoy/cüzdan
+TARİH     : <YYYY-MM-DD>
+SİNYAL    : ONAY / VETO / UYARI / NÖTR
+KONU      : <sembol veya PORTFÖY-GENEL>
+```
+VETO kararlarında ihlal edilen kural açıkça belirtilmeli. Tam karar detayı kendi `reports/` klasöründe kalır.
+
+### Gelen Görevler ← CEO
+CEO'nun görev kartları `tasks/` klasörüne düşer.
+Heartbeat'te `tasks/` klasörünü kontrol et; dosya varsa oku (pozisyon onay talebi veya portföy sorgusu), işle, tamamlayınca sil.
